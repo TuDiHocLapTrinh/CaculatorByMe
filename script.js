@@ -4,8 +4,8 @@ var first_number = 0;
 var second_number = 0;
 var operator = "";
 var OperatorIputedFlag = new Boolean(false);
-var WaitForClearScreenFlag = new Boolean(false);
-var operatorArray = new Array("÷", "x", "-", "+");
+
+const operatorArray = new Array("÷", "x", "-", "+");
 
 function buttonclick(value) {
   switch (value) {
@@ -19,57 +19,95 @@ function buttonclick(value) {
     case 7:
     case 8:
     case 9:
-      //   if (scrVal.innerText.length <= 4) {
-      //     scrVal.innerText += value;
-      //   } else {
-      //     alert("Your number too long");
-      //   }
-      if (OperatorIputedFlag == true) {
-        second_number = value;
-      } else {
-        first_number = value;
-      }
-      scrVal.innerText += value;
-
-      console.log("ok");
+      numberbutton(value);
       break;
     case 10:
     case 11:
     case 12:
     case 13:
-      //scrVal.innerText += operatorArray[value - 10];
-      if (OperatorIputedFlag == false) {
-        OperatorIputedFlag = true;
-        console.log("ok");
-        scrVal.innerText += operatorArray[value - 10];
-        operator = operatorArray[value - 10];
-      } else {
-        OperatorIputedFlag = true;
-        resultscr.innerHTML = caculator(first_number, second_number, operator);
-        first_number = parseFloat(resultscr.innerHTML);
-        scrVal.innerHTML = resultscr.innerHTML + operatorArray[value - 10];
-        operator = operatorArray[value - 10];
-      }
+      operatorbutton(value);
       break;
     case 14:
-      if (scrVal.innerText.includes(".") == false) {
-        scrVal.innerText += ".";
-      }
-
+      dotbutton();
       //nothing ;
-      else break;
+      break;
     case 15:
+      break;
     case 16:
+      delbutton();
+      break;
     case 17:
+      equalbutton();
       break;
     default:
       alert("not available value");
       break;
   }
 
-  console.log(first_number);
-  console.log(second_number);
-  console.log(operator);
+  //   console.log(first_number);
+  //   console.log(second_number);
+  //   console.log(operator);
+}
+
+function numberbutton(value) {
+  scrVal.innerText += value;
+  console.log("ok");
+}
+
+function operatorbutton(value) {
+  if (OperatorIputedFlag == false) {
+    OperatorIputedFlag = true;
+    console.log("ok");
+    scrVal.innerText += operatorArray[value - 10];
+    operator = operatorArray[value - 10];
+  } else {
+    first_number = parseFloat(
+      scrVal.innerText.slice(0, scrVal.innerText.indexOf(operator))
+    );
+    second_number = parseFloat(
+      scrVal.innerText.slice(scrVal.innerText.indexOf(operator) + 1)
+    );
+    resultscr.innerText = caculator(first_number, second_number, operator);
+    scrVal.innerText = resultscr.innerText + operatorArray[value - 10];
+    operator = operatorArray[value - 10];
+  }
+}
+
+function delbutton() {
+  scrVal.innerText = "";
+  operator = "";
+  first_number = 0;
+  second_number = 0;
+  OperatorIputedFlag = false;
+}
+
+function dotbutton() {
+  let dotEnable = new Boolean(true);
+  if (
+    scrVal.innerText.includes(".", 0) == true &&
+    OperatorIputedFlag == false
+  ) {
+    dotEnable = false;
+  }
+  if (
+    OperatorIputedFlag == true &&
+    scrVal.innerText.includes(".", scrVal.innerText.indexOf(operator)) == true
+  ) {
+    dotEnable = false;
+  }
+
+  if (dotEnable) scrVal.innerText += ".";
+}
+
+function equalbutton() {
+  first_number = parseFloat(
+    scrVal.innerText.slice(0, scrVal.innerText.indexOf(operator))
+  );
+  second_number = parseFloat(
+    scrVal.innerText.slice(scrVal.innerText.indexOf(operator) + 1)
+  );
+  resultscr.innerText = caculator(first_number, second_number, operator);
+  scrVal.innerText += "=";
 }
 
 function caculator(first, second, ope) {
