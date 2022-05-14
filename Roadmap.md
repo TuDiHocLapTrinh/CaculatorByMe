@@ -1,6 +1,6 @@
 ## Học css và html
 
-- Đọc cơ bản về các thuộc tính để css 1 element(padding, margin, color, font-size, background...). Học thêm về flex box, đọc thêm 1 chút về grid trong css, dàn trang bằng css flex box thử, đọc thêm về responsive, cách sử dụng css media query để css cho desktop, mobile, tablet
+- Đọc cơ bản về các thuộc tính để css 1 element(padding, margin, color, font-size, background...). Học thêm về flex box(đọc kĩ), đọc thêm 1 chút về grid trong css, dàn trang bằng css flex box thử, đọc thêm về responsive, cách sử dụng css media query để css cho desktop, mobile, tablet
 - Css lại máy tính, tập css các thẻ cơ bản(ul, li, a, div, span, div, h1, h2, input, select...).
 
 ## JS
@@ -24,5 +24,12 @@
 - Trang chính của reactjs https://reactjs.org/ có cả tiếng việt
 - Event loop trong js https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=1088s
 - Coding convention https://github.com/airbnb/javascript
+- Restful api https://viblo.asia/p/restful-api-la-gi-1Je5EDJ4lnL
+- Đọc thêm về nextjs https://viblo.asia/p/tim-hieu-ve-nextjs-p1-djeZ1bNjlWz
 
+## Chuẩn bị
+
+- Làm 1 todo app tự quản lý các todo của mình
+- Xây dựng prototype sẵn, nghiệp vụ của app cần làm là những gì, chuẩn bị trước các feature sẽ làm cho todo app 
+- Todo app sẽ dùng được cả trên desktop và mobile nên đọc kĩ phần cách responsive
 
