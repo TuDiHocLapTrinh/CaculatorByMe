@@ -8,6 +8,8 @@
 - Làm các ví dụ thêm về array, string, đọc kĩ về arrow function
 - Đọc thêm 1 chút về nodejs, cách cài thêm 1 thư viện, quản lý package bằng npm(install, delete), đọc rõ khái niệm của nó, các thêm các package, import vào file js như nào
 - Học thêm về call api, các 
+- Đọc kĩ về object của js, hiểu object là gì
+- Đọc thêm chút về JSON
 
 ## Khái niệm chuẩn bị cho làm FE
 
@@ -26,6 +28,7 @@
 - Coding convention https://github.com/airbnb/javascript
 - Restful api https://viblo.asia/p/restful-api-la-gi-1Je5EDJ4lnL
 - Đọc thêm về nextjs https://viblo.asia/p/tim-hieu-ve-nextjs-p1-djeZ1bNjlWz
+- Json https://freetuts.net/json-la-gi-cau-truc-chuoi-json-236.html
 
 ## Chuẩn bị
 
